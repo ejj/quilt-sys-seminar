@@ -16,3 +16,10 @@
 
 * Start Quilt!
     * `QUILT_PATH="." ./quilt main.spec`
+    * Wait several minutes until you see the "New connection" statement
+    * Log into `quilt@<masterIP>`
+    * Run `swarm ps` to see currently running containers
+
+* When you're done stop the VMs you started
+    * `quilt stop <NAMESPACE>`
+    * Wait for "Successfully halted machines."
