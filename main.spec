@@ -11,7 +11,7 @@
 
 // Spark two masters 3 workers. zookeeper for Spark leader election
 (let ((zoo (zookeeper.New "zookeeper" 3))
-      (sprk (spark.New "spark" 2 3 zoo)))
+      (sprk (spark.New "spark" 1 2 zoo)))
   (spark.Job sprk "run-example SparkPi"))
 
 // ============================= Infrastructure ===============================
@@ -24,7 +24,7 @@
 (define AdminACL (list "local"))
 
 (let ((cfg (list (provider "Amazon")
-                 (size "m4.large")
+                 (cpu 2) (ram 8)
                  (githubKey "<YOUR_GITHUB_USERNAME>"))))
   (makeList 1 (machine (role "Master") cfg))
-  (makeList 5 (machine (role "Worker") cfg)))
+  (makeList 3 (machine (role "Worker") cfg)))
