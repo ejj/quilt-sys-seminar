@@ -15,4 +15,4 @@
         * Alternatively can use `sshkey` with a public ssh key
 
 * Start Quilt!
-    * `./quilt main.spec`
+    * `QUILT_PATH="." ./quilt main.spec`
